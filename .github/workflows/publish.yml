@@ -1,0 +1,38 @@
+name: Publish Package
+
+on:
+    push:
+        branches:
+            - master
+
+permissions:
+    contents: read
+
+jobs:
+    build-and-publish-package:
+        name: Build and publish package to npm
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+            pull-requests: write
+            id-token: write
+
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v4
+
+            - name: Node setup
+              uses: actions/setup-node@v4
+              with:
+                node-version: "lts/*"
+
+            - name: Install dependencies
+              run: npm ci
+
+            - name: Verify integrity of provenance and registry signature
+              run: npm audit signature
+              
+            - name: Build package
+              run: npm run build
+
+            
