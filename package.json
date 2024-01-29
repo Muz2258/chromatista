@@ -1,0 +1,27 @@
+{
+	"name": "chromatista",
+	"version": "0.0.0",
+	"description": "A JavaScript library for the manipulation of colors based on color science",
+	"main": "main.js",
+	"scripts": {
+		"build": "rollup --config"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Muz2258/chromatista.git"
+	},
+	"author": "Emamuzo Okerri",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Muz2258/chromatista/issues"
+	},
+	"homepage": "https://github.com/Muz2258/chromatista#readme",
+	"devDependencies": {
+		"@semantic-release/changelog": "^6.0.3",
+		"@semantic-release/git": "^10.0.1",
+		"jest": "^29.7.0",
+		"rollup": "^4.9.6",
+		"rollup-plugin-cleanup": "^3.2.1",
+		"semantic-release": "^23.0.0"
+	}
+}
